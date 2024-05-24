@@ -55,6 +55,25 @@ Y ahora ejecutas **npx prisma generate**, en teoría aquí se lee el modelo y me
 * Ejecutas **npx prisma migrate dev --name nombre_nuevo_modelo**
 * Por buenas prácticas actualizas el cliente de prisma **npx prisma generate**
 
+### Compilando el proyecto.
+Una vez el proyecto haya finalizado lo compilamos para generar la carpeta dist, esta carpeta es la que va a interpretar el servidor.
+**npm run build** y subimos el proyecto a GitHub.
 
+###  Subiendo el proyecto a Railway
+* Seleccionamos el proyecto ya subido en GitHub desde Railway y le damos desplegar ahora
+* Creamos nuestra base de datos de postgres de postgres dándole click derecho a la parte izquierda de la interfaz que nos aparece...
+![alt text](image.png)
+* Agregamos las variables de entorno al proyecto
+![alt text](image-1.png)
+Pones el JWT_SECRET tal cuál lo tienes en las variables de entorno y las siguientes la URL de la Base de Datos la pones así:
+DATABASE_URL={{Postgres.DATABASE_URL}}
 
- 
+Una vez realizado esto le das en Deploy al proyecto(El botoncito púrpura que dice deploy)...
+![alt text](image-2.png)
+
+* Ahora Vas a "settings" y le das en el apartado "Public Networking" a "generate domain" para que genere la URL para consumir la api.
+![alt text](image-3.png)
+
+* Por último creas las tablas en la base de datos docker para que todo pueda funcioner así...
+![alt text](image-5.png)
+
