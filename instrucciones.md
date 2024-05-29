@@ -22,7 +22,7 @@ Estas instrucciones deben ir fuera del "compilerOptions".
 Esto hace que no se esté escuchando estas dos carpetas(node_modules y dist) para compilarlas a JS. Y para que si escuche src que es donde tenemos nuestros archivos TS.
 
 ### Scripts de nuestro package para dev,start y build
-* "dev": "tsnd --respawn --clear src/app.ts" -> Este hace las veces de nodemon para nuestro proyecto con TS
+* "dev": "tsnd --respawn --clear src/server.ts" -> Este hace las veces de nodemon para nuestro proyecto con TS
                                                 este es el que usa el paquete "ts-node-dev".
 * "build":"rimraf ./dist && tsc" -> Este es para compilar el proyecto a JS y generar la carpeta dist
 * "start":"node dist/server.js" -> Este es para poder arrancar la aplicación en el servidor donde alojemos nuestro proyecto en producción
