@@ -54,7 +54,7 @@ export const getProductById=async(req:Request,res:Response):Promise<void>=>{
         //Valido que el producto exista...
         if(!product){
             //404->No encontrado
-            res.status(404).json({message:`El usuario con id:${userId}, no existe`});
+            res.status(404).json({message:`El producto con id:${userId}, no existe`});
             return
         }
         //200 -> Petición exitosa
@@ -80,7 +80,7 @@ export const updateProduct=async(req:Request,res:Response):Promise<void>=>{
         res.status(200).json(product);
     }catch(error:any){
         if(error?.code ==='P2025'){
-            res.status(404).json({message:'El usuario no existe, no se puede editar'});
+            res.status(404).json({message:'El producto no existe, no se puede editar'});
             return
         }
         //500 -> Error interno del servidor
